@@ -24,8 +24,8 @@ protein_list = []
 for aa in protein_input:
     protein_list.append(aa)
 
-
-key = { "A" : "Adenoside",
+# Key for Abbreviation.
+nt_key = { "A" : "Adenoside",
         "C" : "Cytidine",
         "T" : "Thymidine",
         "G" : "Guanosine",
@@ -121,4 +121,10 @@ def protein_to_nt(protein_list):
 
 codon_list = protein_to_nt(protein_list)
 print("\nThe corrosponing nucleotide sequence is : \n" , codon_list)
-print("\n\n\n Key : \n" , key)
+
+
+# key
+print("\n\nKey : ")
+print("\t{:^15} {:<15}".format("Abbreviation", "Base"))
+for key, value in nt_key.items():
+    print("\t{:^15} {:<15}".format(key, value))
